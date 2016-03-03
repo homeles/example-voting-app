@@ -1,5 +1,9 @@
 FROM java:7
 
+ENV http_proxy=http://proxy.houston.hpecorp.net:8080/
+ENV https_proxy=http://proxy.houston.hpecorp.net:8080/
+ENV no_proxy=localhost,127.0.0.1,hpecorp.net
+
 RUN apt-get update -qq && apt-get install -y maven && apt-get clean
 
 WORKDIR /code
